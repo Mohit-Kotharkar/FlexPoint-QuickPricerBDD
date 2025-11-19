@@ -1,3 +1,5 @@
+stepdefinitions\LLPASteps.class
 stepdefinitions\QuickPricerSteps.class
-testrunners\TestRunner.class
 pages\QuickPricerPage.class
+stepdefinitions\Hooks.class
+testrunners\TestRunner.class

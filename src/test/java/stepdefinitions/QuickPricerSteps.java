@@ -1,27 +1,22 @@
 package stepdefinitions;
 
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.When;
-import io.cucumber.java.en.Then;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.JavascriptExecutor;
-import org.testng.Assert;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 
 public class QuickPricerSteps {
     private WebDriver driver;
 
     @Given("I am on the Quick Pricer page")
     public void i_am_on_the_quick_pricer_page() {
-        driver = new ChromeDriver();
+        driver = Hooks.getDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         driver.get("https://brokersfirstfunding.buildyourai.consulting/quick-pricer");
@@ -37,6 +32,8 @@ public class QuickPricerSteps {
         WebElement option = driver.findElement(By.xpath("//span[contains(text(), '" + programName + "')]"));
         option.click();
     }
+
+    
 
     @Then("the respective rate and price options should be displayed for {string}")
     public void the_respective_rate_and_price_options_should_be_displayed(String programName) {
