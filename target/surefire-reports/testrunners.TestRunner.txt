@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: testrunners.TestRunner
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 9.049 s <<< FAILURE! -- in testrunners.TestRunner
+testrunners.TestRunner.runScenario["Verify the respective Price and Rate options are displayed based on the selected Program", "Quick Pricer Rate and Price Display"](1) -- Time elapsed: 7.761 s <<< FAILURE!
+java.lang.AssertionError: Not all expected rate/price options are present in the dropdown expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at stepdefinitions.QuickPricerSteps.the_respective_rate_and_price_options_should_be_displayed(QuickPricerSteps.java:111)
+	at ✽.the respective rate and price options should be displayed for "NON-QM Expanded Doc"(file:///C:/Users/SJI-GOA-18/Documents/Automation/QuickPricerBDD/src/test/java/features/QuickPricer.feature:8)
+
