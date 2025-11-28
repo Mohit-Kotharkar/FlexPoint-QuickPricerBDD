@@ -1,6 +1,7 @@
 package stepdefinitions;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -9,6 +10,21 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class LLPASteps {
+    // Helper to set LTV input to 1 by keyboard simulation
+    private void setLtvToOne(WebElement ltvInput) throws InterruptedException {
+        ltvInput.click();
+        ltvInput.sendKeys(org.openqa.selenium.Keys.BACK_SPACE);
+        Thread.sleep(100);
+        ltvInput.sendKeys(org.openqa.selenium.Keys.LEFT);
+        Thread.sleep(100);
+        ltvInput.sendKeys("1");
+        Thread.sleep(100);
+        ltvInput.sendKeys(org.openqa.selenium.Keys.END);
+        ltvInput.sendKeys(org.openqa.selenium.Keys.BACK_SPACE);
+        Thread.sleep(100);
+        System.out.println("[DEBUG] LTV input set to 1 by keyboard simulation.");
+    }
+
     private WebDriver driver;
 
     public LLPASteps() {
@@ -27,19 +43,24 @@ public class LLPASteps {
     public void i_set_fico_score_to(String fico) throws InterruptedException {
         driver = Hooks.getDriver();
         Thread.sleep(1000); // Wait for page/input to be ready
-        WebElement ficoInput = driver.findElement(By.cssSelector("input#ficoScore, input[type='number'][placeholder='Score']"));
-        System.out.println("[DEBUG] FICO input attributes: type=" + ficoInput.getAttribute("type") + ", placeholder=" + ficoInput.getAttribute("placeholder") + ", id=" + ficoInput.getAttribute("id") + ", name=" + ficoInput.getAttribute("name") + ", value=" + ficoInput.getAttribute("value"));
+        WebElement ficoInput = driver
+                .findElement(By.cssSelector("input#ficoScore, input[type='number'][placeholder='Score']"));
+        System.out.println("[DEBUG] FICO input attributes: type=" + ficoInput.getAttribute("type") + ", placeholder="
+                + ficoInput.getAttribute("placeholder") + ", id=" + ficoInput.getAttribute("id") + ", name="
+                + ficoInput.getAttribute("name") + ", value=" + ficoInput.getAttribute("value"));
         int ficoValue = parseFico(fico);
         String targetValue = String.valueOf(ficoValue);
         int attempts = 0;
         while (attempts < 5) {
             ((org.openqa.selenium.JavascriptExecutor) driver).executeScript(
-                "arguments[0].value = ''; arguments[0].focus(); arguments[0].value = arguments[1];",
-                ficoInput, targetValue);
+                    "arguments[0].value = ''; arguments[0].focus(); arguments[0].value = arguments[1];",
+                    ficoInput, targetValue);
             Thread.sleep(500);
             String actual = ficoInput.getAttribute("value");
-            System.out.println("[DEBUG] FICO input after JS set (attempt " + (attempts+1) + "): value='" + actual + "'");
-            if (targetValue.equals(actual)) break;
+            System.out.println(
+                    "[DEBUG] FICO input after JS set (attempt " + (attempts + 1) + "): value='" + actual + "'");
+            if (targetValue.equals(actual))
+                break;
             attempts++;
         }
         if (targetValue.equals(ficoInput.getAttribute("value"))) {
@@ -55,37 +76,50 @@ public class LLPASteps {
     public void i_set_ltv_to(String ltv) throws InterruptedException {
         driver = Hooks.getDriver();
         Thread.sleep(1000); // Wait for page/input to be ready
-        WebElement ltvInput = driver.findElement(By.cssSelector("input#ltvRatio, input[type='number'][placeholder='LTV %']"));
-        System.out.println("[DEBUG] LTV input attributes: type=" + ltvInput.getAttribute("type") + ", placeholder=" + ltvInput.getAttribute("placeholder") + ", id=" + ltvInput.getAttribute("id") + ", name=" + ltvInput.getAttribute("name") + ", value=" + ltvInput.getAttribute("value"));
-        String targetValue = ltv;
-        int attempts = 0;
-        while (attempts < 5) {
-            ((org.openqa.selenium.JavascriptExecutor) driver).executeScript(
-                "arguments[0].value = ''; arguments[0].focus(); arguments[0].value = arguments[1];",
-                ltvInput, targetValue);
-            Thread.sleep(500);
-            String actual = ltvInput.getAttribute("value");
-            System.out.println("[DEBUG] LTV input after JS set (attempt " + (attempts+1) + "): value='" + actual + "'");
-            if (targetValue.equals(actual)) break;
-            attempts++;
-        }
-        if (targetValue.equals(ltvInput.getAttribute("value"))) {
-            ((org.openqa.selenium.JavascriptExecutor) driver).executeScript("arguments[0].blur();", ltvInput);
-            System.out.println("[DEBUG] LTV input blurred after successful set.");
-        } else {
-            System.out.println("[WARN] LTV input did not match expected value after retries!");
-        }
-        Thread.sleep(1000); // Wait after input
+        WebElement ltvInput = driver.findElement(By.cssSelector("input[type='number'][placeholder='LTV %']"));
+        ltvInput.click();
+        ltvInput.sendKeys(Keys.chord(Keys.CONTROL, "a")); // For Windows
+        ltvInput.sendKeys(ltv);
     }
 
-    @Then("the LLPA adjustment should be {string}")
-    public void the_llpa_adjustment_should_be(String expectedAdjustment) {
+    @Then("the LLPA adjustment should have {string} {string} {string}")
+    public void the_llpa_adjustment_should_have(String expected1, String expected2, String adjustment) {
         driver = Hooks.getDriver();
-        WebElement adjustmentElem = driver.findElement(By.xpath("//h4[normalize-space(text())='LLPA Adjustments:']/following-sibling::div[1]"));
-        String actualSection = adjustmentElem.getText();
-        String expected = expectedAdjustment + " bps";
-        Assert.assertTrue(actualSection.contains(expected),
-            "LLPA adjustment section does not contain expected value: '" + expected + "'. Actual: '" + actualSection + "'");
+        // Find all first spans under each div in the LLPA Adjustments section
+        java.util.List<WebElement> divs = driver.findElements(
+            By.xpath("//h4[normalize-space(text())='LLPA Adjustments:']/following-sibling::div//div"));
+        boolean found = false;
+        for (WebElement div : divs) {
+            java.util.List<WebElement> spans = div.findElements(By.tagName("span"));
+            if (!spans.isEmpty()) {
+                String spanText = spans.get(0).getText();
+                boolean match = true;
+                // Only check non-empty values (empty string means not provided)
+                if (expected1 != null && !expected1.trim().equals("")) {
+                    if (!spanText.contains(expected1.trim())) {
+                        match = false;
+                    }
+                }
+                if (expected2 != null && !expected2.trim().equals("")) {
+                    if (!spanText.contains(expected2.trim())) {
+                        match = false;
+                    }
+                }
+                if (adjustment != null && !adjustment.trim().equals("")) {
+                    if (!spanText.contains(adjustment.trim())) {
+                        match = false;
+                    }
+                } else {
+                    match = false; // adjustment is required
+                }
+                if (match) {
+                    found = true;
+                    break;
+                }
+            }
+        }
+        Assert.assertTrue(found,
+            "No single adjustment span contains all required values. Expected1: '" + expected1 + "', Expected2: '" + expected2 + "', Adjustment: '" + adjustment + "'.");
         driver.quit();
     }
 
@@ -117,7 +151,6 @@ public class LLPASteps {
             }
         }
     }
-
 
     @Then("I select the Income Doc Type {string}")
     public void i_select_income_doc_type(String docType) throws InterruptedException {
@@ -163,7 +196,13 @@ public class LLPASteps {
     private void selectDropdownByIdAndText(String id, String visibleText) throws InterruptedException {
         driver = Hooks.getDriver();
         WebElement dropdown = driver.findElement(By.id(id));
-        System.out.println("[DEBUG] Clicking dropdown with id: " + id + ", current value: '" + dropdown.getText() + "'");
+        String currentValue = dropdown.getText().trim();
+        System.out.println("[DEBUG] Dropdown id: " + id + ", current value: '" + currentValue + "', required: '"
+                + visibleText + "'");
+        if (currentValue.equalsIgnoreCase(visibleText.trim())) {
+            System.out.println("[DEBUG] Value already set to '" + visibleText + "', skipping selection.");
+            return;
+        }
         dropdown.click();
         Thread.sleep(500);
         // Find the option by visible text (span inside dropdown popper)

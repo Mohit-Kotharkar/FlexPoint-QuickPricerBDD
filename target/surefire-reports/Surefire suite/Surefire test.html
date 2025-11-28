@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Surefire test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>35/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Nov 19 21:05:46 IST 2025</td>
+<td>Started on:</td><td>Fri Nov 28 20:11:41 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>30 seconds (30814 ms)</td>
+<tr><td>Total time:</td><td>370 seconds (370991 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,16 +76,16 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='testrunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: testrunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify LLPA adjustment for FICO and LTV", "FICO/LTV Loan Level Price Adjustments (LLPA)"</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[contains(text(), &apos;24 Month Bank Statement&apos;)]&quot;}
-  (Session info: chrome=142.0.7444.163)
+<td title='testrunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: testrunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify LLPA adjustment for Doc Type and LTV (NON-QM Expanded Doc)", "FICO/LTV Loan Level Price Adjustments (LLPA) : NON-QM Expanded Doc"</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[contains(text(), &apos;CPA P&amp;L w/ BS&apos;)]&quot;}
+  (Session info: chrome=142.0.7444.176)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: &apos;4.19.1&apos;, revision: &apos;abe0ee07dc&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.8&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [bd29066a8f7386c962903beb5fd5f2cc, findElement {value=//span[contains(text(), &apos;24 Month Bank Statement&apos;)], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\SJI-GO~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60276}, goog:processID: 5380, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60276/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: bd29066a8f7386c962903beb5fd5f2cc
+Command: [67442e752b435f185bb5c552ef4308c9, findElement {using=xpath, value=//span[contains(text(), &apos;CPA P&amp;L w/ BS&apos;)]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.176, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\SJI-GO~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60847}, goog:processID: 17216, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60847/devtoo..., se:cdpVersion: 142.0.7444.176, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 67442e752b435f185bb5c552ef4308c9
 	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
@@ -97,19 +97,19 @@ Session ID: bd29066a8f7386c962903beb5fd5f2cc
 	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-	at stepdefinitions.LLPASteps.selectDropdownByIdAndText(LLPASteps.java:170)
-	at stepdefinitions.LLPASteps.i_select_income_doc_type(LLPASteps.java:124)
-	at ✽.I select the Income Doc Type &quot;24 Month Bank Statement&quot;(file:///C:/Users/SJI-GOA-18/Documents/Automation/QuickPricerBDD/src/test/java/features/LLPAAdjustments.feature:9)
-... Removed 3 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2030707995", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace2030707995'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[contains(text(), &apos;24 Month Bank Statement&apos;)]&quot;}
-  (Session info: chrome=142.0.7444.163)
+	at stepdefinitions.LLPASteps.selectDropdownByIdAndText(LLPASteps.java:209)
+	at stepdefinitions.LLPASteps.i_select_income_doc_type(LLPASteps.java:157)
+	at ✽.I select the Income Doc Type &quot;CPA P&amp;L w/ BS&quot;(file:///C:/Users/SJI-GOA-18/Documents/Automation/QuickPricerBDD/src/test/java/features/LLPAAdjustments.feature:180)
+... Removed 3 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace59320794", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace59320794'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[contains(text(), &apos;CPA P&amp;L w/ BS&apos;)]&quot;}
+  (Session info: chrome=142.0.7444.176)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: &apos;4.19.1&apos;, revision: &apos;abe0ee07dc&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.8&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [bd29066a8f7386c962903beb5fd5f2cc, findElement {value=//span[contains(text(), &apos;24 Month Bank Statement&apos;)], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.163, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\SJI-GO~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60276}, goog:processID: 5380, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60276/devtoo..., se:cdpVersion: 142.0.7444.163, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: bd29066a8f7386c962903beb5fd5f2cc
+Command: [67442e752b435f185bb5c552ef4308c9, findElement {using=xpath, value=//span[contains(text(), &apos;CPA P&amp;L w/ BS&apos;)]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.176, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\SJI-GO~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60847}, goog:processID: 17216, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60847/devtoo..., se:cdpVersion: 142.0.7444.176, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 67442e752b435f185bb5c552ef4308c9
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -124,11 +124,195 @@ Session ID: bd29066a8f7386c962903beb5fd5f2cc
 	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-	at stepdefinitions.LLPASteps.selectDropdownByIdAndText(LLPASteps.java:170)
-	at stepdefinitions.LLPASteps.i_select_income_doc_type(LLPASteps.java:124)
-	at ✽.I select the Income Doc Type &quot;24 Month Bank Statement&quot;(file:///C:/Users/SJI-GOA-18/Documents/Automation/QuickPricerBDD/src/test/java/features/LLPAAdjustments.feature:9)
+	at stepdefinitions.LLPASteps.selectDropdownByIdAndText(LLPASteps.java:209)
+	at stepdefinitions.LLPASteps.i_select_income_doc_type(LLPASteps.java:157)
+	at ✽.I select the Income Doc Type &quot;CPA P&amp;L w/ BS&quot;(file:///C:/Users/SJI-GOA-18/Documents/Automation/QuickPricerBDD/src/test/java/features/LLPAAdjustments.feature:180)
 </pre></div></td>
-<td>30</td>
+<td>16</td>
+<td>testrunners.TestRunner@3f197a46</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='testrunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: testrunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify LLPA adjustment for Doc Type and LTV (NON-QM Expanded Doc)", "FICO/LTV Loan Level Price Adjustments (LLPA) : NON-QM Expanded Doc"</td>
+<td></td>
+<td>9</td>
+<td>testrunners.TestRunner@3f197a46</td></tr>
+<tr>
+<td title='testrunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: testrunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify LLPA adjustment for Doc Type and LTV (NON-QM Expanded Doc)", "FICO/LTV Loan Level Price Adjustments (LLPA) : NON-QM Expanded Doc"</td>
+<td></td>
+<td>8</td>
+<td>testrunners.TestRunner@3f197a46</td></tr>
+<tr>
+<td title='testrunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: testrunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify LLPA adjustment for Doc Type and LTV (NON-QM Expanded Doc)", "FICO/LTV Loan Level Price Adjustments (LLPA) : NON-QM Expanded Doc"</td>
+<td></td>
+<td>10</td>
+<td>testrunners.TestRunner@3f197a46</td></tr>
+<tr>
+<td title='testrunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: testrunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify LLPA adjustment for Doc Type and LTV (NON-QM Expanded Doc)", "FICO/LTV Loan Level Price Adjustments (LLPA) : NON-QM Expanded Doc"</td>
+<td></td>
+<td>8</td>
+<td>testrunners.TestRunner@3f197a46</td></tr>
+<tr>
+<td title='testrunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: testrunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify LLPA adjustment for Doc Type and LTV (NON-QM Expanded Doc)", "FICO/LTV Loan Level Price Adjustments (LLPA) : NON-QM Expanded Doc"</td>
+<td></td>
+<td>10</td>
+<td>testrunners.TestRunner@3f197a46</td></tr>
+<tr>
+<td title='testrunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: testrunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify LLPA adjustment for Doc Type and LTV (NON-QM Expanded Doc)", "FICO/LTV Loan Level Price Adjustments (LLPA) : NON-QM Expanded Doc"</td>
+<td></td>
+<td>10</td>
+<td>testrunners.TestRunner@3f197a46</td></tr>
+<tr>
+<td title='testrunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: testrunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify LLPA adjustment for Doc Type and LTV (NON-QM Expanded Doc)", "FICO/LTV Loan Level Price Adjustments (LLPA) : NON-QM Expanded Doc"</td>
+<td></td>
+<td>10</td>
+<td>testrunners.TestRunner@3f197a46</td></tr>
+<tr>
+<td title='testrunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: testrunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify LLPA adjustment for Doc Type and LTV (NON-QM Expanded Doc)", "FICO/LTV Loan Level Price Adjustments (LLPA) : NON-QM Expanded Doc"</td>
+<td></td>
+<td>11</td>
+<td>testrunners.TestRunner@3f197a46</td></tr>
+<tr>
+<td title='testrunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: testrunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify LLPA adjustment for Doc Type and LTV (NON-QM Expanded Doc)", "FICO/LTV Loan Level Price Adjustments (LLPA) : NON-QM Expanded Doc"</td>
+<td></td>
+<td>9</td>
+<td>testrunners.TestRunner@3f197a46</td></tr>
+<tr>
+<td title='testrunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: testrunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify LLPA adjustment for Doc Type and LTV (NON-QM Expanded Doc)", "FICO/LTV Loan Level Price Adjustments (LLPA) : NON-QM Expanded Doc"</td>
+<td></td>
+<td>9</td>
+<td>testrunners.TestRunner@3f197a46</td></tr>
+<tr>
+<td title='testrunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: testrunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify LLPA adjustment for Doc Type and LTV (NON-QM Expanded Doc)", "FICO/LTV Loan Level Price Adjustments (LLPA) : NON-QM Expanded Doc"</td>
+<td></td>
+<td>9</td>
+<td>testrunners.TestRunner@3f197a46</td></tr>
+<tr>
+<td title='testrunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: testrunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify LLPA adjustment for Doc Type and LTV (NON-QM Expanded Doc)", "FICO/LTV Loan Level Price Adjustments (LLPA) : NON-QM Expanded Doc"</td>
+<td></td>
+<td>9</td>
+<td>testrunners.TestRunner@3f197a46</td></tr>
+<tr>
+<td title='testrunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: testrunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify LLPA adjustment for Doc Type and LTV (NON-QM Expanded Doc)", "FICO/LTV Loan Level Price Adjustments (LLPA) : NON-QM Expanded Doc"</td>
+<td></td>
+<td>9</td>
+<td>testrunners.TestRunner@3f197a46</td></tr>
+<tr>
+<td title='testrunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: testrunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify LLPA adjustment for Doc Type and LTV (NON-QM Expanded Doc)", "FICO/LTV Loan Level Price Adjustments (LLPA) : NON-QM Expanded Doc"</td>
+<td></td>
+<td>10</td>
+<td>testrunners.TestRunner@3f197a46</td></tr>
+<tr>
+<td title='testrunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: testrunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify LLPA adjustment for Doc Type and LTV (NON-QM Expanded Doc)", "FICO/LTV Loan Level Price Adjustments (LLPA) : NON-QM Expanded Doc"</td>
+<td></td>
+<td>10</td>
+<td>testrunners.TestRunner@3f197a46</td></tr>
+<tr>
+<td title='testrunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: testrunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify LLPA adjustment for Doc Type and LTV (NON-QM Expanded Doc)", "FICO/LTV Loan Level Price Adjustments (LLPA) : NON-QM Expanded Doc"</td>
+<td></td>
+<td>10</td>
+<td>testrunners.TestRunner@3f197a46</td></tr>
+<tr>
+<td title='testrunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: testrunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify LLPA adjustment for Doc Type and LTV (NON-QM Expanded Doc)", "FICO/LTV Loan Level Price Adjustments (LLPA) : NON-QM Expanded Doc"</td>
+<td></td>
+<td>9</td>
+<td>testrunners.TestRunner@3f197a46</td></tr>
+<tr>
+<td title='testrunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: testrunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify LLPA adjustment for Doc Type and LTV (NON-QM Expanded Doc)", "FICO/LTV Loan Level Price Adjustments (LLPA) : NON-QM Expanded Doc"</td>
+<td></td>
+<td>9</td>
+<td>testrunners.TestRunner@3f197a46</td></tr>
+<tr>
+<td title='testrunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: testrunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify LLPA adjustment for Doc Type and LTV (NON-QM Expanded Doc)", "FICO/LTV Loan Level Price Adjustments (LLPA) : NON-QM Expanded Doc"</td>
+<td></td>
+<td>10</td>
+<td>testrunners.TestRunner@3f197a46</td></tr>
+<tr>
+<td title='testrunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: testrunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify LLPA adjustment for Doc Type and LTV (NON-QM Expanded Doc)", "FICO/LTV Loan Level Price Adjustments (LLPA) : NON-QM Expanded Doc"</td>
+<td></td>
+<td>10</td>
+<td>testrunners.TestRunner@3f197a46</td></tr>
+<tr>
+<td title='testrunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: testrunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify LLPA adjustment for Doc Type and LTV (NON-QM Expanded Doc)", "FICO/LTV Loan Level Price Adjustments (LLPA) : NON-QM Expanded Doc"</td>
+<td></td>
+<td>9</td>
+<td>testrunners.TestRunner@3f197a46</td></tr>
+<tr>
+<td title='testrunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: testrunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify LLPA adjustment for Doc Type and LTV (NON-QM Expanded Doc)", "FICO/LTV Loan Level Price Adjustments (LLPA) : NON-QM Expanded Doc"</td>
+<td></td>
+<td>10</td>
+<td>testrunners.TestRunner@3f197a46</td></tr>
+<tr>
+<td title='testrunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: testrunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify LLPA adjustment for Doc Type and LTV (NON-QM Expanded Doc)", "FICO/LTV Loan Level Price Adjustments (LLPA) : NON-QM Expanded Doc"</td>
+<td></td>
+<td>13</td>
+<td>testrunners.TestRunner@3f197a46</td></tr>
+<tr>
+<td title='testrunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: testrunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify LLPA adjustment for Doc Type and LTV (NON-QM Expanded Doc)", "FICO/LTV Loan Level Price Adjustments (LLPA) : NON-QM Expanded Doc"</td>
+<td></td>
+<td>10</td>
+<td>testrunners.TestRunner@3f197a46</td></tr>
+<tr>
+<td title='testrunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: testrunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify LLPA adjustment for Doc Type and LTV (NON-QM Expanded Doc)", "FICO/LTV Loan Level Price Adjustments (LLPA) : NON-QM Expanded Doc"</td>
+<td></td>
+<td>9</td>
+<td>testrunners.TestRunner@3f197a46</td></tr>
+<tr>
+<td title='testrunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: testrunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify LLPA adjustment for Doc Type and LTV (NON-QM Expanded Doc)", "FICO/LTV Loan Level Price Adjustments (LLPA) : NON-QM Expanded Doc"</td>
+<td></td>
+<td>10</td>
+<td>testrunners.TestRunner@3f197a46</td></tr>
+<tr>
+<td title='testrunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: testrunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify LLPA adjustment for Doc Type and LTV (NON-QM Expanded Doc)", "FICO/LTV Loan Level Price Adjustments (LLPA) : NON-QM Expanded Doc"</td>
+<td></td>
+<td>10</td>
+<td>testrunners.TestRunner@3f197a46</td></tr>
+<tr>
+<td title='testrunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: testrunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify LLPA adjustment for Doc Type and LTV (NON-QM Expanded Doc)", "FICO/LTV Loan Level Price Adjustments (LLPA) : NON-QM Expanded Doc"</td>
+<td></td>
+<td>10</td>
+<td>testrunners.TestRunner@3f197a46</td></tr>
+<tr>
+<td title='testrunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: testrunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify LLPA adjustment for Doc Type and LTV (NON-QM Expanded Doc)", "FICO/LTV Loan Level Price Adjustments (LLPA) : NON-QM Expanded Doc"</td>
+<td></td>
+<td>8</td>
+<td>testrunners.TestRunner@3f197a46</td></tr>
+<tr>
+<td title='testrunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: testrunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify LLPA adjustment for Doc Type and LTV (NON-QM Expanded Doc)", "FICO/LTV Loan Level Price Adjustments (LLPA) : NON-QM Expanded Doc"</td>
+<td></td>
+<td>10</td>
+<td>testrunners.TestRunner@3f197a46</td></tr>
+<tr>
+<td title='testrunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: testrunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify LLPA adjustment for Doc Type and LTV (NON-QM Expanded Doc)", "FICO/LTV Loan Level Price Adjustments (LLPA) : NON-QM Expanded Doc"</td>
+<td></td>
+<td>10</td>
+<td>testrunners.TestRunner@3f197a46</td></tr>
+<tr>
+<td title='testrunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: testrunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify LLPA adjustment for Doc Type and LTV (NON-QM Expanded Doc)", "FICO/LTV Loan Level Price Adjustments (LLPA) : NON-QM Expanded Doc"</td>
+<td></td>
+<td>10</td>
+<td>testrunners.TestRunner@3f197a46</td></tr>
+<tr>
+<td title='testrunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: testrunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify LLPA adjustment for Doc Type and LTV (NON-QM Expanded Doc)", "FICO/LTV Loan Level Price Adjustments (LLPA) : NON-QM Expanded Doc"</td>
+<td></td>
+<td>9</td>
+<td>testrunners.TestRunner@3f197a46</td></tr>
+<tr>
+<td title='testrunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: testrunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify LLPA adjustment for Doc Type and LTV (NON-QM Expanded Doc)", "FICO/LTV Loan Level Price Adjustments (LLPA) : NON-QM Expanded Doc"</td>
+<td></td>
+<td>10</td>
+<td>testrunners.TestRunner@3f197a46</td></tr>
+<tr>
+<td title='testrunners.TestRunner.runScenario()'><b>runScenario</b><br>Test class: testrunners.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify LLPA adjustment for Doc Type and LTV (NON-QM Expanded Doc)", "FICO/LTV Loan Level Price Adjustments (LLPA) : NON-QM Expanded Doc"</td>
+<td></td>
+<td>8</td>
 <td>testrunners.TestRunner@3f197a46</td></tr>
 </table><p>
 </body>
