@@ -157,6 +157,11 @@ public class LLPASteps {
         selectDropdownByIdAndText("incomeDocType", docType);
     }
 
+     @Then("I select the DSCR Ratio {string}")
+    public void i_select_dscr_ratio(String dscrRatio) throws InterruptedException {
+        selectDropdownByIdAndText("incomeDocType", dscrRatio);
+    }
+
     @Then("I select the Loan Term {string}")
     public void i_select_loan_term(String loanTerm) throws InterruptedException {
         selectDropdownByIdAndText("loanTerm", loanTerm);

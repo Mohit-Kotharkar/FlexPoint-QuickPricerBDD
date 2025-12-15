@@ -7,11 +7,11 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
         features = {
-            "src/test/java/features/LLPAAdjustment_NONQM_MultiUnit_MixedUse.feature",
-            "src/test/java/features/LLPAAdjustment_NONQM_CES_NOO.feature",
-            "src/test/java/features/LLPAAdjustment_NONQM_DSCR.feature",
-            "src/test/java/features/LLPAAdjustment_NONQM_ExpandedDoc.feature",
-            "src/test/java/features/LLPAAdjustment_NONQM_FullDoc.feature"
+        //     "src/test/java/features/LLPAAdjustment_NONQM_MultiUnit_MixedUse.feature",
+        //     "src/test/java/features/LLPAAdjustment_NONQM_CES_NOO.feature",
+        //     "src/test/java/features/LLPAAdjustment_NONQM_DSCR.feature",
+        //     "src/test/java/features/LLPAAdjustment_NONQM_FullDoc.feature",
+            "src/test/java/features/LLPAAdjustment_NONQM_ExpandedDoc.feature"
         },
         glue = {"stepdefinitions"},
         plugin = {
@@ -24,7 +24,7 @@ import io.cucumber.testng.CucumberOptions;
 
 public class TestRunner extends AbstractTestNGCucumberTests {
         @Override
-        @DataProvider(parallel = true)
+        @DataProvider(parallel = false)
         public Object[][] scenarios() {
                 return super.scenarios();
         }

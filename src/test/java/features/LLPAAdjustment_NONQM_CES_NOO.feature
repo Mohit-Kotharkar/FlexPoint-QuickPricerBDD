@@ -238,3 +238,101 @@ Feature: FICO/LTV Loan Level Price Adjustments (LLPA) : CES NOO - NON-QM CES NOO
       | P&L Only              | 660 - 679 | 75.01-80 |  670 |  80 | Not Eligible |
       | P&L Only              | 660 - 679 | 80.01-85 |  670 |  85 | Not Eligible |
       | P&L Only              | 660 - 679 | 85.01-90 |  670 |  90 | Not Eligible |
+
+  Scenario Outline: Verify LLPA adjustment for DSCR Ratio and LTV - NON-QM CES NOO
+    Given I am on the Quick Pricer page
+    Then I wait for 3 seconds
+    When I select the program "NON-QM CES NOO"
+    Then I wait for 5 seconds
+    Then I select the DSCR Ratio "<DSCRRatio>"
+    And I set LTV to "<LTV>"
+    Then I wait for 3 seconds
+    Then the LLPA adjustment should have "<DSCRRatio>" "" "<Adjustment>"
+
+    Examples:
+      | DSCRRatio      | LTVRange    | LTV | Adjustment   |
+      | DSCR ≥1.50     | <= 50%      |  50 |        0.250 |
+      | DSCR ≥1.50     | 50.01 - 55% |  55 |        0.250 |
+      | DSCR ≥1.50     | 55.01 - 60% |  60 |        0.250 |
+      | DSCR ≥1.50     | 60.01 - 65% |  65 |        0.250 |
+      | DSCR ≥1.50     | 65.01 - 70% |  70 |        0.250 |
+      | DSCR ≥1.50     | 70.01 - 75% |  75 |        0.250 |
+      | DSCR ≥1.50     | 75.01 - 80% |  80 |        0.250 |
+      | DSCR ≥1.50     | 80.01 - 85% |  85 | Not Eligible |
+      | DSCR ≥1.50     | 85.01 - 90% |  90 | Not Eligible |
+      | DSCR 1.25-1.49 | <= 50%      |  50 |        0.000 |
+      | DSCR 1.25-1.49 | 50.01 - 55% |  55 |        0.000 |
+      | DSCR 1.25-1.49 | 55.01 - 60% |  60 |        0.000 |
+      | DSCR 1.25-1.49 | 60.01 - 65% |  65 |        0.000 |
+      | DSCR 1.25-1.49 | 65.01 - 70% |  70 |        0.000 |
+      | DSCR 1.25-1.49 | 70.01 - 75% |  75 |        0.000 |
+      | DSCR 1.25-1.49 | 75.01 - 80% |  80 |        0.000 |
+      | DSCR 1.25-1.49 | 80.01 - 85% |  85 | Not Eligible |
+      | DSCR 1.25-1.49 | 85.01 - 90% |  90 | Not Eligible |
+      | DSCR 1.10-1.24 | <= 50%      |  50 |       -0.250 |
+      | DSCR 1.10-1.24 | 50.01 - 55% |  55 |       -0.250 |
+      | DSCR 1.10-1.24 | 55.01 - 60% |  60 |       -0.250 |
+      | DSCR 1.10-1.24 | 60.01 - 65% |  65 |       -0.375 |
+      | DSCR 1.10-1.24 | 65.01 - 70% |  70 |       -0.375 |
+      | DSCR 1.10-1.24 | 70.01 - 75% |  75 |       -0.375 |
+      | DSCR 1.10-1.24 | 75.01 - 80% |  80 |       -0.500 |
+      | DSCR 1.10-1.24 | 80.01 - 85% |  85 | Not Eligible |
+      | DSCR 1.10-1.24 | 85.01 - 90% |  90 | Not Eligible |
+      | DSCR 1.00-1.09 | <= 50%      |  50 |       -0.750 |
+      | DSCR 1.00-1.09 | 50.01 - 55% |  55 |       -0.750 |
+      | DSCR 1.00-1.09 | 55.01 - 60% |  60 |       -0.750 |
+      | DSCR 1.00-1.09 | 60.01 - 65% |  65 |       -0.750 |
+      | DSCR 1.00-1.09 | 65.01 - 70% |  70 |       -0.750 |
+      | DSCR 1.00-1.09 | 70.01 - 75% |  75 |       -0.750 |
+      | DSCR 1.00-1.09 | 75.01 - 80% |  80 |       -1.000 |
+      | DSCR 1.00-1.09 | 80.01 - 85% |  85 | Not Eligible |
+      | DSCR 1.00-1.09 | 85.01 - 90% |  90 | Not Eligible |
+
+  Scenario Outline: Verify LLPA adjustment for Property Type and LTV - NON-QM CES NOO
+    Given I am on the Quick Pricer page
+    Then I wait for 3 seconds
+    When I select the program "NON-QM CES NOO"
+    Then I wait for 5 seconds
+    Then I select the Property Type "<PropertyType>"
+    And I set LTV to "<LTV>"
+    Then I wait for 3 seconds
+    Then the LLPA adjustment should have "<PropertyType>" "" "<Adjustment>"
+
+    Examples:
+      | PropertyType      | LTVRange    | LTV | Adjustment   |
+      | SFR               | <= 50%      |  50 |        0.000 |
+      | SFR               | 50.01 - 55% |  55 |        0.000 |
+      | SFR               | 55.01 - 60% |  60 |        0.000 |
+      | SFR               | 60.01 - 65% |  65 |        0.000 |
+      | SFR               | 65.01 - 70% |  70 |        0.000 |
+      | SFR               | 70.01 - 75% |  75 |        0.000 |
+      | SFR               | 75.01 - 80% |  80 |        0.000 |
+      | SFR               | 80.01 - 85% |  85 | Not Eligible |
+      | SFR               | 85.01 - 90% |  90 | Not Eligible |
+      | Warrantable Condo | <= 50%      |  50 |       -0.250 |
+      | Warrantable Condo | 50.01 - 55% |  55 |       -0.250 |
+      | Warrantable Condo | 55.01 - 60% |  60 |       -0.250 |
+      | Warrantable Condo | 60.01 - 65% |  65 |       -0.375 |
+      | Warrantable Condo | 65.01 - 70% |  70 |       -0.375 |
+      | Warrantable Condo | 70.01 - 75% |  75 |       -0.500 |
+      | Warrantable Condo | 75.01 - 80% |  80 | Not Eligible |
+      | Warrantable Condo | 80.01 - 85% |  85 | Not Eligible |
+      | Warrantable Condo | 85.01 - 90% |  90 | Not Eligible |
+      |          2-4 Unit | <= 50%      |  50 |       -0.375 |
+      |          2-4 Unit | 50.01 - 55% |  55 |       -0.375 |
+      |          2-4 Unit | 55.01 - 60% |  60 |       -0.375 |
+      |          2-4 Unit | 60.01 - 65% |  65 |       -0.500 |
+      |          2-4 Unit | 65.01 - 70% |  70 |       -0.500 |
+      |          2-4 Unit | 70.01 - 75% |  75 | Not Eligible |
+      |          2-4 Unit | 75.01 - 80% |  80 | Not Eligible |
+      |          2-4 Unit | 80.01 - 85% |  85 | Not Eligible |
+      |          2-4 Unit | 85.01 - 90% |  90 | Not Eligible |
+      | Modular           | <= 50%      |  50 |       -2.000 |
+      | Modular           | 50.01 - 55% |  55 |       -2.000 |
+      | Modular           | 55.01 - 60% |  60 |       -2.000 |
+      | Modular           | 60.01 - 65% |  65 |       -2.000 |
+      | Modular           | 65.01 - 70% |  70 |       -2.000 |
+      | Modular           | 70.01 - 75% |  75 |       -2.000 |
+      | Modular           | 75.01 - 80% |  80 |       -2.000 |
+      | Modular           | 80.01 - 85% |  85 | Not Eligible |
+      | Modular           | 85.01 - 90% |  90 | Not Eligible |
